@@ -13,8 +13,8 @@
 ---
 
 <p align="center">
-  <img src="assets/dataset.jpg" height="220">
-  <img src="assets/method.jpg" height="220">
+  <img src="assets/dataset.jpg" height="180">
+  <img src="assets/method.jpg" height="180">
 </p>
 
 <p align="center">
