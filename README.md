@@ -4,10 +4,10 @@
       <strong><span style="color: red;">SIGGRAPH Asia 2026</span></strong>
     <br>
     <a href='https://hong-xiang-cv.github.io/' target='_blank'>Hongxiang Zhao*</a>&emsp;
-    Xingchen Liu*</a>&emsp;
     <a href='https://mutianxu.github.io/' target='_blank'>Mutian Xu</a>&emsp;
+    <a href='https://scholar.google.com/citations?user=mGvR_WoAAAAJ' target='_blank'>Zeyu Jin</a>&emsp;  
     <a href='https://scholar.google.com/citations?user=mlu1Oo4AAAAJ&hl=en' target='_blank'>Yiming Hao</a>&emsp;
-    <a href='https://chenweikai.github.io/' target='_blank'>Weikai Chen</a>&emsp;
+    <a href='https://sse.cuhk.edu.cn/en/faculty/cuishuguang' target='_blank'>Shuguang Cui</a>&emsp;
     <a href='https://gaplab.cuhk.edu.cn/' target='_blank'>Xiaoguang Han§</a>&emsp;
     <br>
     CUHKSZ <a href='https://gaplab.cuhk.edu.cn/' target='_blank'>GAP-Lab</a>   
