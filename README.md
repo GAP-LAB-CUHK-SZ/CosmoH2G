@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://cosmoh2g.github.io/"><img src="https://img.shields.io/badge/🌐-Website-blue"></a>
-  <a href="https://arxiv.org/abs/2507.03930"><img src="https://img.shields.io/badge/📄-arXiv-red"></a>
+  <a href="https://arxiv.org/abs/2609.07498"><img src="https://img.shields.io/badge/📄-arXiv-red"></a>
 </p>
 
 <p align="center">
@@ -25,9 +25,12 @@
 ## Citation
 
 ```bibtex
-@article{cosmoh2g2025,
-  title={CosmoH2G: A Hand-to-Gripper Transfer Dataset and Baseline Method for Object Manipulation with Complex Spatial Movements},
-  author={...},
-  journal={arXiv preprint arXiv:2507.03930},
-  year={2025}
+@misc{zhao2026cosmoh2ghandtogrippertransferdataset,
+      title={CosmoH2G: A Hand-to-Gripper Transfer Dataset and Baseline Method for Object Manipulation with Complex Spatial Movements}, 
+      author={Hongxiang Zhao and Mutian Xu and Zeyu Jin and Yiming Hao and Shuguang Cui and Xiaoguang Han},
+      year={2026},
+      eprint={2609.07498},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2609.07498}, 
 }
