@@ -22,7 +22,62 @@
   <b>Right:</b> Method — Stage-I keyframes → Stage-II full sequence
 </p>
 
-## Data Processing
+## Dataset
+
+The release has 6,189 episodes across 1,254 objects, grouped by capture date. Object meshes, the UMI mesh, and the MANO models are shared at the repository root. Files are on [ModelScope `GAP-Lab/CosmoH2G`](https://www.modelscope.cn/datasets/GAP-Lab/CosmoH2G).
+
+```text
+CosmoH2G/
+├── 3d_seq/
+│   ├── 12_16.zip
+│   ├── 12_17.zip
+│   ├── ...
+│   └── 4_1.zip
+├── meshes.zip
+├── umi.obj
+├── MANO_RIGHT.npz
+└── MANO_LEFT.npz
+```
+
+`3d_seq/` contains 37 date archives: `12_16`–`12_20`, `12_22`–`12_29`, `1_4`–`1_8`, `1_14`–`1_17`, `1_23`, `1_26`, `2_28`, `3_2`–`3_6`, `3_9`–`3_14`, and `4_1`. Each archive unpacks as:
+
+```text
+<date>/
+└── <object_id>_<slot_start>_<slot_end>/
+    ├── umi_pose_seq.npy
+    ├── mano_right.npy      # or mano_left.npy
+    └── obj_pose_ends.npy
+```
+
+`meshes.zip` unpacks to `meshes/<object_id:06d>.ply`. The object id is the first field of the case directory name. Object `977` is `meshes/000977.ply`.
+
+The three sequences have the same length. Only the object start and end poses are stored.
+
+| File | Shape | Content |
+|------|-------|---------|
+| `umi_pose_seq.npy` | `(N, 7)` | `x y z qw qx qy qz`, world pose of `umi_base` |
+| `mano_right.npy` / `mano_left.npy` | `(N, 100)` | translation (3) + wrist 6D + 15 finger joints × 6D + scale. The filename selects the hand. `betas` are 0 |
+| `obj_pose_ends.npy` | `(2, 8)` | row 0 is the start pose, row 1 is the end pose. Each row is `x y z qw qx qy qz scale` |
+
+World object vertices are `R(q) @ (scale * ply) + xyz`. Quaternions are `qw qx qy qz`. A 6D rotation is the first two columns of the rotation matrix.
+
+### Rendering
+
+`render.py` renders one episode. Put it in the dataset root, next to `3d_seq/`, `meshes/`, `umi.obj`, and the two MANO models. It reads only files inside that directory. Unpack `meshes.zip` and the date archive before rendering. Dependencies are `numpy`, `scipy`, `open3d`, and `ffmpeg`.
+
+```bash
+python render.py 3d_seq/1_16/977_9_10
+python render.py 3d_seq/1_16/977_9_10 -o /tmp/977_9_10.mp4
+```
+
+| Argument | Description |
+|----------|-------------|
+| `case` | Episode directory, for example `3d_seq/1_16/977_9_10` |
+| `-o`, `--out` | Output mp4. Default is `<date>_<case>.mp4` in the current directory |
+
+The start object is green and the end object is orange. Both stay in every frame. The hand and the UMI gripper move on every frame. Video size is 960×640 at 30 fps.
+
+## Raw Video Processing
 
 ### Data Format
 
