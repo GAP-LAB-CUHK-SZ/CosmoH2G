@@ -77,6 +77,10 @@ python render.py 3d_seq/1_16/977_9_10 -o /tmp/977_9_10.mp4
 
 The start object is green and the end object is orange. Both stay in every frame. The hand and the UMI gripper move on every frame. Video size is 960×640 at 30 fps.
 
+## Baseline Model
+
+Inference code, pretrained weights and the evaluation script for the two-stage baseline are in [`model/`](model/README.md).
+
 ## Raw Video Processing
 
 ### Data Format

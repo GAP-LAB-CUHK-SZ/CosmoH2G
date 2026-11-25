@@ -1,0 +1,5 @@
+numpy<2
+scipy
+open3d>=0.17
+einops
+tqdm
